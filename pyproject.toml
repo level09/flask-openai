@@ -4,7 +4,7 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "flask-openai"
-version = "0.4.0"
+version = "0.5.0"
 description = "A Flask extension for easy integration with OpenAI's API."
 authors = [
     {name = "Nidal Alhariri", email = "level09@gmail.com"},

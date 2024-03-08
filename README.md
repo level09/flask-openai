@@ -63,12 +63,17 @@ Now, you can access the OpenAI client in your route handlers using `openai_exten
 ```python
 @app.route('/generate-text')
 def generate_text():
-    response = openai_extension.client.Completion.create(
-      engine="text-davinci-003",
-      prompt="Once upon a time",
-      max_tokens=50
+    completion = openai.client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system",
+             "content": "You are a poetic assistant, skilled in explaining complex programming concepts with creative flair."},
+            {"role": "user", "content": "Compose a poem that explains the concept of recursion in programming."}
+        ]
     )
-    return response.choices[0].text
+
+    return completion.choices[0].message.content
+
 ```
 
 ## Documentation
